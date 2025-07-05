@@ -1,0 +1,29 @@
+# Juice menu with prices
+juice_menu = {
+    "orange": 40,
+    "apple": 50,
+    "mango": 60
+}
+
+print("🍹 Welcome to Juice Shop 🍹")
+
+# Input from user
+juice = input("Which juice do you want? (orange/apple/mango): ").lower()
+quantity = int(input("How many glasses?: "))
+
+# Get price using .get, default is 0 if juice not found
+price = juice_menu.get(juice, 0)
+
+# Total and discount calculation
+total = price * quantity
+discount = total * 0.10
+final_total = total - discount
+
+# Bill print (will show 0 if juice was not found)
+print("\n🧾 Your Bill")
+print(f"Juice: {juice}")
+print(f"Quantity: {quantity}")
+print(f"Total: ₹{total}")
+print(f"Discount (10%): ₹{discount}")
+print(f"Amount to Pay: ₹{final_total:.2f}")
+print("✅ Thank you! Visit again.")
