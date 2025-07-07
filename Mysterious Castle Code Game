@@ -1,0 +1,22 @@
+# Welcome message for the user
+print("Welcome to the mysterious castle \nwhere you have to find the key")
+
+# Loop gives the user 4 chances to guess the correct code
+for i in range(4):
+    # Take input from the user and convert to float
+    c = float(input("Enter the secret code: "))
+
+    # Check if the code is divisible by both 3 and 5
+    if c % 3 == 0 and c % 5 == 0:
+        print("Clue found!")  # Correct code
+        break
+    # Check if the code is divisible by either 3 or 5
+    elif c % 3 == 0 or c % 5 == 0:
+        print("Clue found!")  # Still a valid code
+        break
+    else:
+        print("Wrong code\n")  # Incorrect code
+        continue  # Continue to next attempt
+else:
+    # Executes if all attempts are used without success
+    print("All chances are over\n")
